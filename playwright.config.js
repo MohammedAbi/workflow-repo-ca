@@ -7,10 +7,10 @@ require("dotenv").config();
  */
 module.exports = defineConfig({
   testDir: "./tests", // Directory for your test files
-  fullyParallel: true, // Run tests in parallel
+  fullyParallel: false, // Run tests in parallel
   forbidOnly: !!process.env.CI, // Fail on accidental .only in CI
   retries: process.env.CI ? 2 : 0, // Retry on CI only
-  workers: process.env.CI ? 1 : undefined, // Opt out of parallel tests on CI
+  workers: 1, // Opt out of parallel tests on CI
   reporter: "html", // Reporter format (HTML is useful for UI reports)
   // use: {
   //   baseURL: "http://localhost:5500", // Ensure this matches where your live server runs
